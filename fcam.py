@@ -9,6 +9,8 @@ import wave
 import pyaudio
 import time
 import sys
+from moviepy.editor import VideoFileClip, AudioFileClip
+from moviepy.audio.fx.all import volumex
 
 def apply_filter(frame):
     return frame
@@ -33,6 +35,14 @@ def play_audio(audio_file, volume):
     stream.stop_stream()
     stream.close()
     pa.terminate()
+
+def play_video_audio(video_file, volume):
+    clip = VideoFileClip(video_file)
+    audio = clip.audio
+    audio = volumex(audio, volume / 100.0)
+    audio = audio.set_fps(44100)
+    audio.preview()
+    clip.close()
 
 def resize_with_borders(image, target_width, target_height):
     original_width, original_height = image.size
@@ -95,6 +105,9 @@ def main():
 
         if args.audio:
             audio_thread = threading.Thread(target=play_audio, args=(args.audio, args.volume))
+            audio_thread.start()
+        elif is_video and args.video_audio == 1:
+            audio_thread = threading.Thread(target=play_video_audio, args=(args.media_file, args.video_volume))
             audio_thread.start()
 
         if is_video:
