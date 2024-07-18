@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Camera Command Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:disabled {
+            background-color: #ccc;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Virtual Camera Command Generator</h1>
+    <div class="form-group">
+        <label for="resolution">Resolution (e.g., 1280x720)</label>
+        <input type="text" id="resolution" placeholder="Enter resolution">
+    </div>
+    <div class="form-group">
+        <label for="mediaFile">Media File Path (video or image)</label>
+        <input type="text" id="mediaFile" placeholder="Enter media file path">
+    </div>
+    <div class="form-group">
+        <label for="audioFile">Audio File Path (optional)</label>
+        <input type="text" id="audioFile" placeholder="Enter audio file path">
+    </div>
+    <div class="form-group" id="audioVolumeGroup">
+        <label for="volume">Volume for Audio (0-100, optional)</label>
+        <input type="number" id="volume" min="0" max="100" placeholder="Enter volume">
+    </div>
+    <div class="form-group">
+        <label for="videoAudio">Video Audio (0 for off, 1 for on)</label>
+        <select id="videoAudio" onchange="toggleVideoVolume()">
+            <option value="1">On</option>
+            <option value="0">Off</option>
+        </select>
+    </div>
+    <div class="form-group" id="videoVolumeGroup">
+        <label for="videoVolume">Volume for Video Audio (0-100)</label>
+        <input type="number" id="videoVolume" min="0" max="100" value="100">
+    </div>
+    <div class="form-group">
+        <label for="loop">Loop Media</label>
+        <select id="loop">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button onclick="generateCommand()">Generate Command</button>
+    </div>
+    <div class="output" id="output"></div>
+</div>
+
+<script>
+    function toggleVideoVolume() {
+        const videoAudio = document.getElementById('videoAudio').value;
+        const videoVolumeGroup = document.getElementById('videoVolumeGroup');
+        if (videoAudio === '0') {
+            videoVolumeGroup.style.display = 'none';
+        } else {
+            videoVolumeGroup.style.display = 'block';
+        }
+    }
+
+    function generateCommand() {
+        const resolution = document.getElementById('resolution').value;
+        const mediaFile = document.getElementById('mediaFile').value;
+        const audioFile = document.getElementById('audioFile').value;
+        const volume = document.getElementById('volume').value;
+        const videoAudio = document.getElementById('videoAudio').value;
+        const videoVolume = document.getElementById('videoVolume').value;
+        const loop = document.getElementById('loop').value;
+
+        if (!resolution || !mediaFile) {
+            alert('Resolution and media file path are required.');
+            return;
+        }
+
+        let command = `python fcam.py ${resolution} ${mediaFile}`;
+
+        if (audioFile) {
+            command += ` -a ${audioFile}`;
+            if (volume) {
+                command += ` -v ${volume}`;
+            }
+        }
+
+        command += ` -av ${videoAudio}`;
+        if (videoAudio === '1') {
+            command += ` -vv ${videoVolume}`;
+        }
+
+        if (loop === '1') {
+            command += ` -l`;
+        }
+
+        document.getElementById('output').textContent = command;
+    }
+
+    window.onload = toggleVideoVolume;
+</script>
+
+</body>
+</html>
