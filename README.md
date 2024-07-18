@@ -1,9 +1,6 @@
 # Fake-Cam
-Fake Cam make with Python
 
-# Virtual Camera with Media Playback
-
-This project allows you to create a virtual camera that plays video or displays images as a camera feed. Additionally, you can play audio alongside the media and control various settings such as resolution, volume, and looping.
+Fake Cam is a Python-based project that allows you to create a virtual camera that plays videos or displays images as a camera feed. Additionally, you can play audio alongside the media and control various settings such as resolution, volume, and looping.
 
 ## Features
 
@@ -12,11 +9,27 @@ This project allows you to create a virtual camera that plays video or displays 
 - Control the resolution of the virtual camera.
 - Adjust the volume for audio files and video audio.
 - Loop the media playback.
-- Stop the script by typing "stop" in the console.
+- Stop the script by typing `stop` in the console.
+
+## How to Use
+
+1. **Make sure you have Python installed on your system.**
+2. **Clone this repository:**
+
+    ```sh
+    git clone https://github.com/e43b/Image-Comparison/
+    ```
+
+3. **Navigate to the project directory:**
+
+    ```sh
+    cd Image-Comparison
+    ```
 
 ## Requirements
 
 - Python 3.x
+- `argparse`
 - `imageio`
 - `numpy`
 - `Pillow`
@@ -26,7 +39,7 @@ This project allows you to create a virtual camera that plays video or displays 
 You can install the required packages using pip:
 
 ```sh
-pip install imageio numpy Pillow pyvirtualcam pyaudio
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -79,13 +92,27 @@ While the script is running, you can type `stop` in the console to stop the exec
 
 ## Web Interface
 
-You can use the provided site to generate the command easily.
+You can use the provided site to generate the command easily:
 
-https://e43b.github.io/Fake-Cam/
+[Fake Cam Command Generator](https://e43b.github.io/Fake-Cam/)
 
 ## Additional Notes
 
 - Ensure that your system has the necessary permissions to create and use a virtual camera.
 - This script has been tested on Windows. Functionality on other operating systems may vary.
 - When using the loop option, the media will restart automatically once it finishes.
-- Use the "stop" command in the console to terminate the script gracefully.
+- Use the `stop` command in the console to terminate the script gracefully.
+
+## Links
+
+- [Project Repository](https://github.com/e43b/Fake-Cam)
+- [Discord Server](https://discord.gg/CsBMMXBz7t)
+- [Donations](https://oxapay.com/donate/40874860)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Credits
+
+&copy; Created by [E43b](https://github.com/e43b)
