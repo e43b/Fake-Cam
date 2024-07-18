@@ -97,20 +97,14 @@ While the script is running, you can type `stop` in the console to stop the exec
 You can use the provided site to generate the command easily:
 
 [Fake Cam Command Generator](https://e43b.github.io/Fake-Cam/)
+![Site](img/site.png)
 
 ## Demonstrations
 
 Here are some images and videos demonstrating the usage and features of Fake Cam:
 
-### Images
-
-![Demo Image 1](path/to/demo-image1.png)
-![Demo Image 2](path/to/demo-image2.png)
-
-### Videos
-
-[![Demo Video 1](path/to/demo-video1-thumbnail.png)](path/to/demo-video1.mp4)
-[![Demo Video 2](path/to/demo-video2-thumbnail.png)](path/to/demo-video2.mp4)
+![Site](img/call.png)
+![Video](img/vid.mp4)
 
 ## Additional Notes
 
