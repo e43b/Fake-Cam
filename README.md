@@ -17,13 +17,13 @@ Fake Cam is a Python-based project that allows you to create a virtual camera th
 2. **Clone this repository:**
 
     ```sh
-    git clone https://github.com/e43b/Image-Comparison/
+    git clone https://github.com/e43b/Fake-Cam/
     ```
 
 3. **Navigate to the project directory:**
 
     ```sh
-    cd Image-Comparison
+    cd Fake-Cam
     ```
 
 ## Requirements
@@ -96,6 +96,20 @@ You can use the provided site to generate the command easily:
 
 [Fake Cam Command Generator](https://e43b.github.io/Fake-Cam/)
 
+## Demonstrations
+
+Here are some images and videos demonstrating the usage and features of Fake Cam:
+
+### Images
+
+![Demo Image 1](path/to/demo-image1.png)
+![Demo Image 2](path/to/demo-image2.png)
+
+### Videos
+
+[![Demo Video 1](path/to/demo-video1-thumbnail.png)](path/to/demo-video1.mp4)
+[![Demo Video 2](path/to/demo-video2-thumbnail.png)](path/to/demo-video2.mp4)
+
 ## Additional Notes
 
 - Ensure that your system has the necessary permissions to create and use a virtual camera.
@@ -108,10 +122,6 @@ You can use the provided site to generate the command easily:
 - [Project Repository](https://github.com/e43b/Fake-Cam)
 - [Discord Server](https://discord.gg/CsBMMXBz7t)
 - [Donations](https://oxapay.com/donate/40874860)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Credits
 
