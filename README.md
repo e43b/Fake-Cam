@@ -35,6 +35,8 @@ Fake Cam is a Python-based project that allows you to create a virtual camera th
 - `Pillow`
 - `pyvirtualcam`
 - `pyaudio`
+- `moviepy`
+- `pygame`
 
 You can install the required packages using pip:
 
