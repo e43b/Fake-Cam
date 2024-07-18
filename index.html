@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Camera Command Generator</title>
+    <title>Fake Cam Command Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
             margin: 20px;
         }
         .container {
-            max-width: 600px;
+            max-width: 1000px;
             margin: auto;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            background-color: #f8f8f8;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
         }
         .form-group {
             margin-bottom: 15px;
@@ -27,10 +36,12 @@
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
         .form-group button {
             padding: 10px 15px;
-            background-color: #28a745;
+            background-color: #000000;
             color: white;
             border: none;
             border-radius: 5px;
@@ -42,16 +53,39 @@
         .output {
             margin-top: 20px;
             padding: 10px;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             border: 1px solid #ddd;
             border-radius: 5px;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+        .icon {
+            margin-left: 5px;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Virtual Camera Command Generator</h1>
+    <img src="logo.png" alt="Fake Cam Logo" class="logo">
+    <h1>Fake Cam Command Generator</h1>
     <div class="form-group">
         <label for="resolution">Resolution (e.g., 1280x720)</label>
         <input type="text" id="resolution" placeholder="Enter resolution" value="1280x720">
@@ -90,6 +124,14 @@
         <button onclick="generateCommand()">Generate Command</button>
     </div>
     <div class="output" id="output"></div>
+    <footer>
+        <p>
+            <a href="https://github.com/e43b/Fake-Cam"><i class="fab fa-github-square icon" style="color: #000000;"></i></a>
+            <a href="https://discord.gg/CsBMMXBz7t"><i class="fab fa-discord icon" style="color: #000000;"></i></a>
+            <a href="https://oxapay.com/donate/40874860"><i class="fas fa-donate icon" style="color: #000000;"></i></a>
+        </p>
+        <p>&copy; Created by <a href="https://github.com/e43b" style="color: #000000;">E43b</a></p>
+    </footer>
 </div>
 
 <script>
