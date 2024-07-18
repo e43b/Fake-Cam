@@ -1,4 +1,4 @@
-# Fake-Cam
+# Fake-Cam [![Views](https://hits.sh/github.com/e43bfakecam/hits.svg)](https://github.com/e43b/Fake-Cam/)
 
 Fake Cam is a Python-based project that allows you to create a virtual camera that plays videos or displays images as a camera feed. Additionally, you can play audio alongside the media and control various settings such as resolution, volume, and looping.
 
