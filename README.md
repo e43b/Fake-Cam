@@ -104,7 +104,7 @@ You can use the provided site to generate the command easily:
 Here are some images and videos demonstrating the usage and features of Fake Cam:
 
 ![Site](img/call.png)
-![Video](img/vid.mp4)
+![Video](img/call.gif)
 
 ## Additional Notes
 
