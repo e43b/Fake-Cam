@@ -1,0 +1,6 @@
+argparse
+imageio
+numpy
+Pillow
+pyvirtualcam
+pyaudio
